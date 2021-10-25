@@ -3,6 +3,7 @@ package entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * @author zy
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
  * @date 2021/8/12 13:53
  */
 @Data
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ldcode {
@@ -20,4 +22,5 @@ public class Ldcode {
     public String codealias;
     public String comcode;
     public String othersign;
+
 }

@@ -13,12 +13,15 @@
         <module>Source2Flink2Hbase</module>
         <module>ProcessFunction</module>
         <module>MyHbaseStudy</module>
+        <module>Agg</module>
+        <module>FlinkSQL</module>
     </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <flink.version>1.12.4</flink.version>
+        <flink.version>1.13.0</flink.version>
+<!--        <flink.version>1.12.4</flink.version>-->
         <scala.binary.version>2.11</scala.binary.version>
         <scala.version>2.11.12</scala.version>
         <!--        <slf4j.version>1.7.30</slf4j.version>-->
@@ -83,6 +86,37 @@
      <dependency>
          <groupId>org.apache.flink</groupId>
          <artifactId>flink-connector-kafka_2.11</artifactId>
+         <version>${flink.version}</version>
+     </dependency>
+
+<!--flinkSQL-->
+     <dependency>
+         <groupId>org.apache.flink</groupId>
+         <artifactId>flink-table-api-java-bridge_2.11</artifactId>
+         <version>${flink.version}</version>
+
+     </dependency>
+<!--     如果你想在 IDE 本地运行你的程序，你需要添加下面的模块-->
+     <dependency>
+         <groupId>org.apache.flink</groupId>
+         <artifactId>flink-table-planner_2.11</artifactId>
+         <version>${flink.version}</version>
+     </dependency>
+
+     <dependency>
+         <groupId>org.apache.flink</groupId>
+         <artifactId>flink-table-planner-blink_2.12</artifactId>
+         <version>${flink.version}</version>
+     </dependency>
+     <dependency>
+         <groupId>org.apache.flink</groupId>
+         <artifactId>flink-streaming-scala_2.12</artifactId>
+         <version>${flink.version}</version>
+     </dependency>
+<!--     如果你想实现自定义格式或连接器 用于（反）序列化行或一组用户定义的函数，下面的依赖就足够了，编译出来的 jar 文件可以直接给 SQL Client 使用：-->
+     <dependency>
+         <groupId>org.apache.flink</groupId>
+         <artifactId>flink-table-common</artifactId>
          <version>${flink.version}</version>
      </dependency>
  </dependencies>

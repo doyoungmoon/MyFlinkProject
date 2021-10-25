@@ -4,6 +4,7 @@ import entity.Ldcode;
 
 import func.LdcodeMapFunction;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
+import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.TaskManagerOptions;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
@@ -14,6 +15,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 
 import sink.LdcodeSink;
 
+import java.lang.reflect.Parameter;
 import java.util.Properties;
 
 /**
@@ -34,6 +36,8 @@ public class Flink2Hbase {
 
         StreamExecutionEnvironment env =
                 StreamExecutionEnvironment.getExecutionEnvironment();
+        ParameterTool pt=ParameterTool.fromPropertiesFile("");
+
         Properties prop = new Properties();
         prop.put("bootstrap.servers", "zyVM:9092");
         prop.put("kafka.zookeeper.connect", "zyVM:2181");

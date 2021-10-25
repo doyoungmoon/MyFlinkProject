@@ -21,7 +21,8 @@ public class MytopicSplitSchema implements KafkaSerializationSchema<String> {
 
         //解析json字符串，得到表名；
         String tablename = JsonParse.getTableName(s);
-//
+
+
         System.out.println("-----------------" + tablename + "-------------------------------");
         System.out.println(s);
 //
